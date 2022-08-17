@@ -36,3 +36,7 @@ function movingStuff(stuff, limit) {
   return stuff.length - twoStuff;
 }
 ```
+
+
+![스크린샷 2022-08-17 오후 11 50 38](https://user-images.githubusercontent.com/80194405/185171038-074a6609-d429-4fc3-ba1a-d9ed980c41a6.jpg)
+
