@@ -15,3 +15,18 @@ function solution(array, commands) {
 return result
 ```
 
+다른 풀이
+```jsx
+function solution(array, commands) {
+let result = []
+for(let command of commands) {
+    console.log(command)
+    const [f, s, t] = command
+    result = result.concat(
+        array.slice(f-1, s).sort((a,b) => a-b).slice(t-1, t)
+    )
+
+}
+return result
+```
+
