@@ -1,0 +1,42 @@
+```jsx
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                const stack = []
+                for(let el of str) {
+                    if(!isNaN(el)) { ✅ 숫자가 아닌 값의 변환을 시도했으나 알맞은 원시 숫자 값이 없는 경우의 결과도 NaN입니다.
+                        stack.push(Number(el))
+                    }else {
+                        let right = stack.pop()
+                        let left = stack.pop()
+                        let result;
+                        if(el === "+") {
+                            result = right + left
+                        }
+                        if(el === "-"){
+                            result = left - right
+                        }
+                        if(el === "*") {
+                            result = left * right
+                        }
+                        if(el === "/") {
+                            result = left/right
+                        }
+                        stack.push(result)
+                    }
+                }
+                return stack[0]
+               
+            }
+
+            let str="352+*9-";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+```
