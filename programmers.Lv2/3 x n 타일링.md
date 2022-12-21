@@ -6,7 +6,7 @@ const MOD = 1000000007;
 function solution (n) {
     if(n % 2) return 0; // 홀수는 날림  
     const dp = [0, 3, 11]; // 41
-    const idx = n >> 1; // 비트 연산자
+    const idx = n >> 1; // 시프트 연산자
   
   for(let i = 3; i <= idx; i++) {
     dp[i] = dp[i-1] * 3 + 2;
