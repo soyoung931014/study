@@ -39,3 +39,12 @@ function solution(n) {
   return arr[n];
 }
 ```
+### 규칙찾기
+
+<img src="https://user-images.githubusercontent.com/80194405/235822207-82e71327-3b82-4e98-9d82-5575bbce2d97.jpg" width="500" height="650"/>
+
+### 같이 참고하면 좋을 자료
+https://happy-time-daily-blog.tistory.com/47 
+
+
+
