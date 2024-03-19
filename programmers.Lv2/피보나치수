@@ -15,3 +15,18 @@ function solution(n) {
 }
 ```
 
+```jsx
+function solution(n) {
+  let tmp;
+  let fir = 0
+  let sec = 1
+    for(let i =2; i<=n; i++){
+        tmp = (fir+sec)%1234567
+        fir=sec
+        sec=tmp
+    }
+    
+    return tmp
+}
+```
+
