@@ -1,0 +1,52 @@
+## 문제
+----
+
+## 틀린 풀이
+---
+```jsx
+function solution(n, left, right) {
+    let arr = Array.from({length: n}, () => Array(n).fill(0))
+    let k=1
+    while(k<=n){
+        
+        for(let i=0; i<k; i++){
+            arr[i][k-1] = k
+        }
+        for(let j=0; j<k; j++){
+            arr[k-1][j] = k
+        }
+        k++
+    }
+    let result = arr.reduce(function(acc,cur){
+        return [...acc,...cur]
+    })
+    
+
+    return result.slice(left,right+1)
+}
+```
+2차원 배열을 생성한 다음, 각 행을 이어 붙여서 1차원화 한 다음 left, right를 slice했다. 
+but, core dumped가 나옴. 
+1 ≤ n ≤ 107이기 때문에 효율성 문제가 발생한것으로 보임
+
+## 풀이
+```jsx
+function solution(n, left, right) {
+    let arr = []
+    while(left<=right){
+        let row = Math.floor(left/n)
+        let column = left%n
+        
+        arr.push(Math.max(row, column)+1)
+        left++
+    }
+    return arr
+
+}
+```
+
+추가 그림으로 설명하는것은 추후에 올리자
+
+
+
+
