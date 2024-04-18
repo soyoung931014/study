@@ -1,0 +1,29 @@
+## 문제
+https://school.programmers.co.kr/learn/courses/30/lessons/64065
+
+## 풀이
+```jsx
+function solution(s) {
+    let result =[]
+    let arr = s.replace('{{','').replace('}}','').split('},{').join(',').split(',')
+    let obj={}
+    for(let i=0; i<arr.length; i++){
+        if(!obj[arr[i]]) obj[arr[i]] = 1
+        else obj[arr[i]] += 1
+    }
+    obj = Object.entries(obj).sort((a,b) => b[1]-a[1])
+    for(let [key, _] of obj){
+        result.push(Number(key))
+    }
+    return result
+}
+```
+
+
+간단하게 집합을 배열로 만들어주고, 원소의 갯수가 큰것부터 나열해주면된다.
+
+1) 빈배열 result=[]
+2) 2차원 배열로 만든다
+3) 2차원배열을 반복문을돌려 객체 형식으로 원소 갯수를 카운팅한다 obj={'2': 1, '1': 1}
+4) 오름차순으로 sort해서 다시 배열로 만들어준다.[[2,1], [1,1]]
+5) 다시 반복문을 돌려 이차원배열의 0번째 인덱스를 result에 push해주면 정답
