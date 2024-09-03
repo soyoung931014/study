@@ -1,0 +1,37 @@
+## 문제
+---
+https://school.programmers.co.kr/learn/courses/30/lessons/250137
+
+## 풀이
+---
+```jsx
+function solution(bandage, health, attacks) {
+    let curHealth = health 
+    let limitTime = attacks[[attacks.length-1]][0]
+    let i=0
+    let success=0
+        for(let t=1; t<=limitTime; t++){
+            let attackTime = attacks[i][0]
+            if(t === attackTime){
+                let blood = attacks[i][1] 
+                curHealth -= blood
+                if(curHealth <= 0) return -1
+                i++
+                success=0
+                continue
+            }else{
+                success++
+                if(success === bandage[0]) {
+                    curHealth += bandage[2]
+                    success=0
+                }
+                curHealth += bandage[1]  
+                if(curHealth>=health) curHealth = health
+            }
+        }     
+   return curHealth
+}
+```
+
+어려운 문제라기보다는 뭐가 너무 많은 문제였다.
+입출력 예시를 하나하나 따라가며 조건을 만들어주었다
