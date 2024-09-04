@@ -29,4 +29,16 @@ for(let command of commands) {
 }
 return result
 ```
+### 또풀이
+```jsx
+function solution(array, commands) {
+    let result = [];
+    for(let i = 0; i < commands.length; i++){
+      let command = commands[i]
+      let slice = array.slice(command[0] - 1, command[1])
+      result.push(slice.sort((a, b) => a - b)[command[2] - 1])
+    }
 
+    return result;
+}
+```
