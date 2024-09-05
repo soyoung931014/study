@@ -42,3 +42,15 @@ function solution(array, commands) {
     return result;
 }
 ```
+
+### 풀이
+```jsx
+function solution(array, commands) {
+    let result = []
+    for(let [start,cut,find] of commands){
+        let tmp = array.slice(start-1,cut).sort((a,b) => a-b)[find-1]
+        result.push(tmp)
+    }
+    return result
+}
+```
